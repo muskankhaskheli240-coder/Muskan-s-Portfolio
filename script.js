@@ -75,8 +75,8 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
     emailjs.sendForm(
-        "service_qp55b",
-        "template_cao3266",
+        "service_cizxhy9",
+        "template_6s5g8fm",
         this
     )
     .then(function() {
