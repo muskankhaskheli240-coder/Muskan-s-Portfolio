@@ -67,11 +67,6 @@ contactForm.addEventListener('submit', (e) => {
     }, 5000);
 });
 
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-
-
 (function(){
 emailjs.init("1_bnZMglqBHXYlhwJ");
 })();
@@ -79,9 +74,7 @@ emailjs.init("1_bnZMglqBHXYlhwJ");
 document
 .getElementById("contactForm")
 .addEventListener("submit", function(e){
-
 e.preventDefault();
-
 emailjs.sendForm(
 "service_cizxhy9",
 "template_6s5g8fm",
@@ -89,19 +82,12 @@ this
 )
 
 .then(function(){
-
 console.log("SUCCESS");
-
 document.getElementById("contactForm").reset();
-
 },
-
 function(error){
-
 console.log("FAILED", error);
-
 });
-
 });
 
 
