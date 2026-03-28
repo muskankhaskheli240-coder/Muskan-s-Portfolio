@@ -68,21 +68,44 @@ contactForm.addEventListener('submit', (e) => {
 });
 
 
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-    emailjs.sendForm(
-        "service_cizxhy9",
-        "template_6s5g8fm",
-        this
-    )
-    .then(function() {
-        document.getElementById("contactForm").style.display = "none";
-        document.getElementById("contactMessage").style.display = "block";
-    }, function(error) {
-        alert("Failed to send message. Error: " + JSON.stringify(error));
-    });
+
+
+(function(){
+emailjs.init("1_bnZMglqBHXYlhwJ");
+})();
+
+document
+.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+emailjs.sendForm(
+"service_cizxhy9",
+"template_6s5g8fm",
+this
+)
+
+.then(function(){
+
+console.log("SUCCESS");
+
+document.getElementById("contactForm").reset();
+
+},
+
+function(error){
+
+console.log("FAILED", error);
+
 });
+
+});
+
+
+    
 
 
 // Add scroll animation for elements
