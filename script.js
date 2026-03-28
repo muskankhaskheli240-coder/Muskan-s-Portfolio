@@ -71,27 +71,21 @@ contactForm.addEventListener('submit', (e) => {
 emailjs.init("1_bnZMglqBHXYlhwJ");
 })();
 
-document
-.getElementById("contactForm")
-.addEventListener("submit", function(e){
-e.preventDefault();
-emailjs.sendForm(
-"service_cizxhy9",
-"template_6s5g8fm",
-this
-)
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-.then(function(){
-console.log("SUCCESS");
-document.getElementById("contactForm").reset();
-},
-function(error){
-console.log("FAILED", error);
+    emailjs.sendForm(
+        "service_qp55b",
+        "template_cao3266",
+        this
+    )
+    .then(function() {
+        document.getElementById("contactForm").style.display = "none";
+        document.getElementById("contactMessage").style.display = "block";
+    }, function(error) {
+        alert("Failed to send message. Error: " + JSON.stringify(error));
+    });
 });
-});
-
-
-    
 
 
 // Add scroll animation for elements
