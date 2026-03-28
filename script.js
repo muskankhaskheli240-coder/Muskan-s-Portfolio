@@ -72,7 +72,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
     emailjs.sendForm(
-        "service_qp55b",
+        "service_qp55bmg",
         "template_cao3266",
         this
     )
